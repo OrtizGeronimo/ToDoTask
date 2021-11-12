@@ -8,5 +8,5 @@ public class Task {
 
     public long id;
     public String title;
-
+    public boolean marked;
 }
