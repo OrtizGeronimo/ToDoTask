@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container text-center align-items-center">
+    <h2 class="" id="title"> To Do List</h2>
+    <h2 class="d-none" id="title-edit"> Editing Task</h2>
+
+    <ul class="list-group w-50 p-3 mx-auto" id="list">
+        <li class="list-group-item d-flex align-items-center">
+            <input type="checkbox" class="mr-2"></input>
+            A list item
+            <div class="ml-auto p-2">
+                <a href="" id="edit" onclick="addTask; return false;">Edit</a>
+            </div>
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+            <input type="checkbox" class="mr-2"></input>
+            A second list item
+            <div class="ml-auto p-2">
+                <a href="">Edit</a>
+            </div>
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+            <input type="checkbox" class="mr-2"></input>
+            A third list item
+
+            <div class="ml-auto p-2">
+                <a href="">Edit</a>
+            </div>
+        </li>
+    </ul>
+    <form action="#" method="post" class="w-50 p-3 mx-auto" id="form-task">
+        <div class="d-flex text-center justify-content-between">
+            <input type="text" placeholder="New Task..." class="w-75">
+            <button type="submit" id="add" class="btn btn-outline-secondary">Add Task</button>
+        </div>
+    </form>
+    <form action="" method="post" class="w-50 p-3 mx-auto d-none" id="form-edit">
+        <div class="form-group">
+            <input type="text" placeholder="Task..." class="w-75">
+
+        </div>
+        <div class="d-flex mx-auto justify-content-around w-50">
+            <button type="submit" class="btn btn-outline-secondary">Save</button>
+            <a href="" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+<script src="./script.js"></script>
 </body>
+
 </html>

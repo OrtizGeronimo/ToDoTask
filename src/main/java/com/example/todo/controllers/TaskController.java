@@ -21,10 +21,8 @@ public class TaskController {
     public String addTask(Model model, @ModelAttribute Task task){
         try {
             Task t = service.addTask(task);
-            if(t != null){
-                List<Task> taskList = service.findAll();
-                model.addAttribute("taskList", taskList);
-            }
+            List<Task> taskList = service.findAll();
+            model.addAttribute("taskList", taskList);
             return "index";
         } catch (Exception e){
             System.out.println("Error " + e.getMessage());
