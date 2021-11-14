@@ -13,8 +13,8 @@
 
     <ul class="list-group w-50 p-3 mx-auto" id="list" th:if="${not #lists.isEmpty(taskList)}">
         <li class="list-group-item d-flex align-items-center" th:each="task : ${taskList}">
-            <input type="checkbox" class="mr-2" th:checked="${task.marked}"></input>
-            <h5 class="align-self-end" th:text="${task.title}"></h5>
+            <input type="checkbox" class="mr-2 checkbox" th:checked="${task.marked}" th:value="${task.id}"/>
+                <h5 class="align-self-end" th:text="${task.title}"></h5>
             <div class="ml-auto p-2">
                 <a th:href="@{/editTask/{id}(id=${task.id})}" class="edit" onclick="addTask; return false;">Edit</a>
             </div>
@@ -29,7 +29,7 @@
     </form>
     <form th:action="@{/editTask/{id}(id=${task.id})}" th:object="${task}" method="post" class="w-50 p-3 mx-auto d-none" id="form-edit">
         <div class="form-group">
-            <input type="text" placeholder="Task..." class="w-75" th:field="*{title}">
+            <input type="text" placeholder="Task..." class="w-75" th:field="*{title}" th:text="${task.title}">
         </div>
         <div class="d-flex mx-auto justify-content-around w-50">
             <button type="submit" class="btn btn-outline-secondary">Save</button>

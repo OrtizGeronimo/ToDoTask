@@ -67,7 +67,13 @@ public class TaskController {
     @PostMapping("/editTask/{id}")
     public RedirectView editTaskForm(Model model, @PathVariable("id") long id, @ModelAttribute("task") Task task){
         try{
-            service.updateOne(task, id);
+            Task t = task;
+            if (task.getTitle().equalsIgnoreCase("")){
+                t = service.findById(id);
+                boolean marked = t.isMarked();
+                t.setMarked(!marked);
+            }
+            service.updateOne(t, id);
             return new RedirectView("/index.html");
         } catch (Exception e){
             System.out.println("Error " + e.getMessage());
