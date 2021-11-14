@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
-
 <head>
-    <title></title>
+    <title>To-Do List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -12,40 +11,25 @@
     <h2 class="" id="title"> To Do List</h2>
     <h2 class="d-none" id="title-edit"> Editing Task</h2>
 
-    <ul class="list-group w-50 p-3 mx-auto" id="list">
-        <li class="list-group-item d-flex align-items-center">
-            <input type="checkbox" class="mr-2"></input>
-            A list item
+    <ul class="list-group w-50 p-3 mx-auto" id="list" th:if="${not #lists.isEmpty(taskList)}">
+        <li class="list-group-item d-flex align-items-center" th:each="task : ${taskList}">
+            <input type="checkbox" class="mr-2" th:checked="${task.marked}"></input>
+            <h5 class="align-self-end" th:text="${task.title}"></h5>
             <div class="ml-auto p-2">
-                <a href="" id="edit" onclick="addTask; return false;">Edit</a>
-            </div>
-        </li>
-        <li class="list-group-item d-flex align-items-center">
-            <input type="checkbox" class="mr-2"></input>
-            A second list item
-            <div class="ml-auto p-2">
-                <a href="">Edit</a>
-            </div>
-        </li>
-        <li class="list-group-item d-flex align-items-center">
-            <input type="checkbox" class="mr-2"></input>
-            A third list item
-
-            <div class="ml-auto p-2">
-                <a href="">Edit</a>
+                <a th:href="@{/editTask/{id}(id=${task.id})}" class="edit" onclick="addTask; return false;">Edit</a>
             </div>
         </li>
     </ul>
-    <form action="#" method="post" class="w-50 p-3 mx-auto" id="form-task">
+    <h4 th:if="${#lists.isEmpty(taskList)}">There are no tasks yet</h4>
+    <form th:action="@{/addTask}" method="post" class="w-50 p-3 mx-auto" id="form-task" th:object="${task}">
         <div class="d-flex text-center justify-content-between">
-            <input type="text" placeholder="New Task..." class="w-75">
+            <input type="text" placeholder="New Task..." class="w-75" th:field="*{title}">
             <button type="submit" id="add" class="btn btn-outline-secondary">Add Task</button>
         </div>
     </form>
-    <form action="" method="post" class="w-50 p-3 mx-auto d-none" id="form-edit">
+    <form th:action="@{/editTask/{id}(id=${task.id})}" th:object="${task}" method="post" class="w-50 p-3 mx-auto d-none" id="form-edit">
         <div class="form-group">
-            <input type="text" placeholder="Task..." class="w-75">
-
+            <input type="text" placeholder="Task..." class="w-75" th:field="*{title}">
         </div>
         <div class="d-flex mx-auto justify-content-around w-50">
             <button type="submit" class="btn btn-outline-secondary">Save</button>
@@ -53,7 +37,7 @@
         </div>
     </form>
 </div>
-<script src="./script.js"></script>
+<script type="text/javascript" th:src="@{/script.js}"></script>
 </body>
 
 </html>
