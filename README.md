@@ -11,8 +11,14 @@ The app was made with Spring Boot (Java), HTML, CSS (Bootstrap) and JavaScript, 
 
 ## App
 
-The app makes a simple managment of tasks, creating or editing them.
+The app is a simple view, with a simple functionallity: managment of tasks. It allows to add, edit tasks, and mark them as done.
 
 ![alt text](https://github.com/OrtizGeronimo/ToDoTask/blob/master/files/Index.png?raw=true)
 
 ![alt text](https://github.com/OrtizGeronimo/ToDoTask/blob/master/files/Edit.png?raw=true)
+
+
+## Deploy
+
+The app is deployed with heroku
+In [APP](https://tasklistortiz.herokuapp.com/index.html) it can be tested  
