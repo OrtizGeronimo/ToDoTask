@@ -1,6 +1,5 @@
 
 var addTask = (event) => {
-
     var action = event.target.getAttribute("href");
     document.getElementById("form-edit").action = action;
     document.getElementById("title").classList.add("d-none");
