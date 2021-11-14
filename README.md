@@ -17,6 +17,9 @@ The app is a simple view, with a simple functionallity: managment of tasks. It a
 
 ![alt text](https://github.com/OrtizGeronimo/ToDoTask/blob/master/files/Edit.png?raw=true)
 
+## Database
+
+The app data is stored in a relational database, using MySql as RDBMS 
 
 ## Deploy
 
