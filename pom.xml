@@ -14,7 +14,7 @@
     <name>ToDo</name>
     <description>ToDo</description>
     <properties>
-        <java.version>11</java.version>
+        
     </properties>
     <dependencies>
         <dependency>
