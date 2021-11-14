@@ -1,6 +1,6 @@
 # ToDoTask
 
-The app was made with Spring Boot (Java), HTML, CSS (Bootstrap) using thymeleaf to connect the backend to the frontend.
+The app was made with Spring Boot (Java), HTML, CSS (Bootstrap) and JavaScript, using thymeleaf to connect the backend to the frontend.
 
 ## Tools
 
