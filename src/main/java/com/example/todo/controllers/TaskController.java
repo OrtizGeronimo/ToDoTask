@@ -49,20 +49,7 @@ public class TaskController {
         }
     }
 
-    @GetMapping("/editTask/{id}")
-    public String editTask(Model model, @PathVariable("id") long id){
-        try{
-            Task t = service.findById(id);
-            model.addAttribute("task", t);
-            System.out.println("hola");
-            return "index";
 
-        } catch (Exception e){
-            System.out.println("Error " + e.getMessage());
-            return "error";
-
-        }
-    }
 
     @PostMapping("/editTask/{id}")
     public RedirectView editTaskForm(Model model, @PathVariable("id") long id, @ModelAttribute("task") Task task){
