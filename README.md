@@ -20,5 +20,5 @@ The app is a simple view, with a simple functionallity: managment of tasks. It a
 
 ## Deploy
 
-The app is deployed with heroku
+The app is deployed with heroku <br>
 In [APP](https://tasklistortiz.herokuapp.com/index.html) it can be tested  
