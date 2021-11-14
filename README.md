@@ -14,3 +14,5 @@ The app was made with Spring Boot (Java), HTML, CSS (Bootstrap) using thymeleaf 
 The app makes a simple managment of tasks, creating or editing them.
 
 ![alt text](https://github.com/OrtizGeronimo/ToDoTask/blob/master/files/Index.png?raw=true)
+
+![alt text](https://github.com/OrtizGeronimo/ToDoTask/blob/master/files/Edit.png?raw=true)
