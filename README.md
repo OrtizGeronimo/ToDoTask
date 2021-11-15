@@ -24,7 +24,7 @@ The app data is stored in a relational database, using MySql as RDBMS
 ## Deploy
 
 The app is deployed with heroku <br>
-In [APP](https://tasklistortiz.herokuapp.com/index.html) it can be tested    (https://tasklistortiz.herokuapp.com/index.html)
+[HERE](https://tasklistortiz.herokuapp.com/index.html) it can be tested. Or (https://tasklistortiz.herokuapp.com/index.html)
 <br>
 
 Data to acces to the database (recommended to make connection with MySqlWorkbench, SQLYog):
