@@ -1,4 +1,4 @@
-<form th:fragment="_editForm" th:action="@{/editTask/{id}(id=${task.id})}" th:object="${task}" method="post" class="w-50 p-3 mx-auto d-none"
+<form th:fragment="_editForm" th:action="@{/editTask/{id}(id=${task.id})}" th:object="${task}" method="post" class="w-50 p-3 mx-auto "
       id="form-edit">
     <div class="form-group">
         <input type="text" placeholder="Task..." class="w-75" th:field="*{title}" th:text="${task.title}">
