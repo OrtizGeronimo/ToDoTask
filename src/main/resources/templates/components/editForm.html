@@ -1,0 +1,10 @@
+<form th:fragment="_editForm" th:action="@{/editTask/{id}(id=${task.id})}" th:object="${task}" method="post" class="w-50 p-3 mx-auto d-none"
+      id="form-edit">
+    <div class="form-group">
+        <input type="text" placeholder="Task..." class="w-75" th:field="*{title}" th:text="${task.title}">
+    </div>
+    <div class="d-flex mx-auto justify-content-around w-50">
+        <button type="submit" class="btn btn-outline-secondary">Save</button>
+        <a href="" class="btn btn-outline-secondary">Cancel</a>
+    </div>
+</form>

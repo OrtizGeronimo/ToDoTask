@@ -1,0 +1,6 @@
+<form th:fragment="_taskForm" th:action="@{/addTask}" method="post" class="w-50 p-3 mx-auto" id="form-task" th:object="${task}">
+    <div class="d-flex text-center justify-content-between">
+        <input type="text" placeholder="New Task..." class="w-75" th:field="*{title}">
+        <button type="submit" id="add" class="btn btn-outline-secondary">Add Task</button>
+    </div>
+</form>
