@@ -1,6 +1,7 @@
 # ToDoTask
 
-The app was made with Spring Boot (Java), HTML, CSS (Bootstrap) and JavaScript, using thymeleaf to connect the backend to the frontend.
+The app was made with Spring Boot (Java), HTML, CSS (Bootstrap) and JavaScript, using thymeleaf to connect the backend
+to the frontend.
 
 ## Tools
 
@@ -11,12 +12,12 @@ The app was made with Spring Boot (Java), HTML, CSS (Bootstrap) and JavaScript, 
 
 ## App
 
-The app is a simple view, with a simple functionallity: managment of tasks. It allows to add, edit tasks, and mark them as done.
+The app is a simple view, with a simple functionallity: managment of tasks. It allows to add, edit tasks, and mark them
+as done.
 
 ![alt text](https://github.com/OrtizGeronimo/ToDoTask/blob/master/files/Index.png?raw=true)
 
 ![alt text](https://github.com/OrtizGeronimo/ToDoTask/blob/master/files/Edit.png?raw=true)
-
 
 ## Deploy
 

@@ -13,15 +13,8 @@
     <h2 class="" id="title"> To Do List</h2>
     <h2 class="d-none" id="title-edit"> Editing Task</h2>
 
-    <ul class="list-group w-50 p-3 mx-auto" id="list" th:if="${not #lists.isEmpty(taskList)}">
-        <li class="list-group-item d-flex align-items-center" th:each="task : ${taskList}">
-            <input type="checkbox" class="mr-2 checkbox" th:checked="${task.marked}" th:value="${task.id}"/>
-                <h5 class="align-self-end" th:text="${task.title}"></h5>
-            <div class="ml-auto p-2">
-                <a th:href="@{/editTask/{id}(id=${task.id})}" class="edit" onclick="addTask; return false;">Edit</a>
-            </div>
-        </li>
-    </ul>
+    <ul th:replace="components/list :: _list"></ul>
+
     <h4 th:if="${#lists.isEmpty(taskList)}">There are no tasks yet</h4>
     <form th:action="@{/addTask}" method="post" class="w-50 p-3 mx-auto" id="form-task" th:object="${task}">
         <div class="d-flex text-center justify-content-between">
@@ -29,7 +22,8 @@
             <button type="submit" id="add" class="btn btn-outline-secondary">Add Task</button>
         </div>
     </form>
-    <form th:action="@{/editTask/{id}(id=${task.id})}" th:object="${task}" method="post" class="w-50 p-3 mx-auto d-none" id="form-edit">
+    <form th:action="@{/editTask/{id}(id=${task.id})}" th:object="${task}" method="post" class="w-50 p-3 mx-auto d-none"
+          id="form-edit">
         <div class="form-group">
             <input type="text" placeholder="Task..." class="w-75" th:field="*{title}" th:text="${task.title}">
         </div>

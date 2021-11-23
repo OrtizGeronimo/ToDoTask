@@ -14,21 +14,21 @@ public class TaskService {
     @Autowired
     private TaskRepository repository;
 
-    public Task addTask(Task t){
+    public Task addTask(Task t) {
         Task task = repository.save(t);
         return task;
     }
 
-    public List<Task> findAll(){
+    public List<Task> findAll() {
         return repository.findAll();
     }
 
-    public Task findById(long id){
+    public Task findById(long id) {
         Optional<Task> t = repository.findById(id);
         return t.get();
     }
 
-    public Task updateOne(Task task, long id){
+    public Task updateOne(Task task, long id) {
         Optional<Task> opt = repository.findById(id);
         Task t = opt.get();
         t = repository.save(task);

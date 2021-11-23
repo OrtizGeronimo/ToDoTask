@@ -20,49 +20,46 @@ public class TaskController {
     private TaskService service;
 
     @GetMapping("/index.html")
-    public String inicio(Model model){
-        try{
+    public String inicio(Model model) {
+        try {
             List<Task> taskList = service.findAll();
-                model.addAttribute("task", new Task());
+            model.addAttribute("task", new Task());
             model.addAttribute("taskList", taskList);
             return "index.html";
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return "error";
         }
     }
 
 
-
-
     @PostMapping("/addTask")
-    public RedirectView addTask(Model model, @ModelAttribute Task task){
+    public RedirectView addTask(Model model, @ModelAttribute Task task) {
         try {
             task.setMarked(false);
             Task t = service.addTask(task);
             List<Task> taskList = service.findAll();
             model.addAttribute("taskList", taskList);
             return new RedirectView("index.html");
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Error " + e.getMessage());
             return new RedirectView("error");
         }
     }
 
 
-
     @PostMapping("/editTask/{id}")
-    public RedirectView editTaskForm(Model model, @PathVariable("id") long id, @ModelAttribute("task") Task task){
-        try{
+    public RedirectView editTaskForm(Model model, @PathVariable("id") long id, @ModelAttribute("task") Task task) {
+        try {
             Task t = task;
-            if (task.getTitle().equalsIgnoreCase("")){
+            if (task.getTitle().equalsIgnoreCase("")) {
                 t = service.findById(id);
                 boolean marked = t.isMarked();
                 t.setMarked(!marked);
             }
             service.updateOne(t, id);
             return new RedirectView("/index.html");
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Error " + e.getMessage());
             return new RedirectView("error");
         }

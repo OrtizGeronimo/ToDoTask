@@ -1,0 +1,9 @@
+<ul th:fragment="_list" class="list-group w-50 p-3 mx-auto" id="list" th:if="${not #lists.isEmpty(taskList)}">
+    <li class="list-group-item d-flex align-items-center" th:each="task : ${taskList}">
+        <input type="checkbox" class="mr-2 checkbox" th:checked="${task.marked}" th:value="${task.id}"/>
+        <h5 class="align-self-end" th:text="${task.title}"></h5>
+        <div class="ml-auto p-2">
+            <a th:href="@{/editTask/{id}(id=${task.id})}" class="edit" onclick="addTask; return false;">Edit</a>
+        </div>
+    </li>
+</ul>
